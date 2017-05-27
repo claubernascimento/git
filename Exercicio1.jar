@@ -1,0 +1,32 @@
+
+package com.implement.algorithms;
+import java.util.Arrays;
+public class RodCut {
+private static final int [] PRECO = {1, 5, 8, 9, 10, 17, 17, 20, 24, 30};
+private static  int [] MAIOR_PRECO = new int[PRICE.length];
+private static int maiorPreco(int n){
+    if(n == 1 ){
+        return PRECO[0];
+    }
+    if(n == 0){
+        return 0;
+    }
+    int atualValor = 0;
+    int maximoValor = 0;
+    for(int i = 0; i <= n - 1 ; i++ ){
+        if(MAIOR_PRECO[n  - 1 - i] == -1){
+            MAIOR_PRECO[n - 1 - i] = maiorPreco(n-i-1);
+        }
+        atualValor = PRECO[i] + MAIOR_PRECO[n - i -1];
+
+        if(atualValor > maximoValor){
+            maximoValor = atualValor;
+        }
+    }
+    return maximoValor;
+}
+public static void main(String[] args) {
+    System.out.println(Arrays.toString(PRICE));
+    Arrays.fill(MAX_PRICE, -1);
+    System.out.println(maxPrice(10));
+}
